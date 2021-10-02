@@ -1,6 +1,7 @@
 package pro.sky.java.course1.lesson6;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,15 +22,16 @@ public class Main {
 
     private static void task3() {
         numberDays(95);
-        System.out.println(numberDays(95));
+
+
     }
 
     private static void task4() {
-        deleteDuplicates();
+        deleteDuplicates("abccdefghhijk");
     }
 
     private static void task5() {
-        moveItems();
+        moveItems(new int[]{3, 2, 1, 6, 5});
     }
 
     //Метод к task1.
@@ -52,21 +54,20 @@ public class Main {
 
     //Метод к task3.
     public static int numberDays(int distance) {
-        if (distance < 20) {
-            return 1;
-        } else if (distance > 20 && distance < 60) {
-            return 2;
-        } else if (distance > 60 && distance < 100) {
-            return 3;
+        int daysCount = 1;
+        if (distance > 20) {
+            daysCount += 1;
         }
-        return numberDays(95);
+        if (distance > 60) {
+            daysCount += 1;
+        }
+        return daysCount;
 
     }
 
     //Метод к task4.
-    public static void deleteDuplicates() {
-        String a = "abccdefghhijk";
-        char[] chars = a.toCharArray();
+    public static void deleteDuplicates(String duplicates) {
+        char[] chars = duplicates.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == chars[i + 1]) {
                 System.out.println("Символ " + "'" + chars[i] + "'" + " дублируется");
@@ -76,10 +77,13 @@ public class Main {
     }
 
     //Метод к task5.
-    private static void moveItems() {
-        int[] arr = {3, 2, 1, 6, 5};
-        for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i]);
+    private static void moveItems(int[] arr) {
+        int size = arr.length;
+        for (int i = 0; i < size / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[size - 1 - i];
+            arr[size - 1 - i] = temp;
         }
+        System.out.println("Массив после раверса" + Arrays.toString(arr));
     }
 }
