@@ -9,10 +9,10 @@ public class Main {
         Book triumphalArch = new Book("Идиот", dostoevsky, 1869);
 
         System.out.println("Название произведения - " + warAndPeace.getName());
-        System.out.println("Автор - " + warAndPeace.author.getSurname());
+        System.out.println("Автор - " + warAndPeace.getAuthor().getSurname());
         System.out.println("Год побуликации - " + warAndPeace.getPublishingYear());
         System.out.println("Название произведения - " + triumphalArch.getName());
-        System.out.println("Автор - " + triumphalArch.author.getSurname());
+        System.out.println("Автор - " + triumphalArch.getAuthor().getSurname());
         System.out.println("Год публикации - " + triumphalArch.getPublishingYear());
         warAndPeace.setPublishingYear(2010);
         System.out.println("Измененный год публикации Войны и мир - " + warAndPeace.getPublishingYear());
