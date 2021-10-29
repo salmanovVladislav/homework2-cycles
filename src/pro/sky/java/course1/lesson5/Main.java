@@ -2,28 +2,32 @@ package pro.sky.java.course1.lesson5;
 
 public class Main {
         public static void main(String[] args) {
-                basictasks();
+                task1();
+                task2();
+                task3();
+                task4();
         }
 
-        private static void basictasks() {
-                String firstName = "Ivan";
-                String middleName = "Ivanovich";
-                String lastName = "Ivanov";
-                String fullName = lastName + " " + firstName + " " + middleName;
+        private static void task1() {
+                String fullName = "Ivanov Ivan Ivanovich";
                 System.out.println("ФИО сотрудника - " + fullName);
+        }
 
+        private static void task2() {
+                String fullName = "Ivanov Ivan Ivanovich";
                 String fullNameForReport = fullName.toUpperCase();
                 System.out.println("Данные ФИО сотрудника для заполнения отчета – " + fullNameForReport);
+        }
 
+        public static void task3() {
+                String fullName = "Ivanov Ivan Ivanovich";
                 String fullNameForPasses = fullName.replace(" ", ";");
                 System.out.println("Данные ФИО сотрудника для административного отдела - " + fullNameForPasses);
+        }
 
-                String[] fullName2 = fullName.split(" ");
-                fullName2[0] = "Иванов";
-                fullName2[1] = "Семён";
-                fullName2[2] = "Семёнович";
-                String fullName3 = fullName2[0] + " " + fullName2[1] + " " + fullName2[2];
-                String fullName4 = fullName3.replace('ё', 'е');
-                System.out.println(fullName4);
+        public static void task4() {
+                String fullName = "Иванов Семён Семёнович";
+                String fullName2 = fullName.replace('ё', 'е');
+                System.out.println("Данные ФИО сотрудника - " + fullName2);
         }
 }
